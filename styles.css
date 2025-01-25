@@ -1,0 +1,107 @@
+body {
+  width: 540px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: white;
+  text-align: center; /* Center text in the body */
+}
+
+.title {
+  font-size: 10px; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Space between title and calendar */
+  color: #00112c;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #00112c;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+.calendar-container {
+  background: white;
+  padding: 20px;
+}
+
+#calendar {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  align-items: center;
+  justify-content: center; /* Center the dot area */
+  max-width: calc(36 * 15px); /* 18 dots with 15px width each */
+}
+
+.dot-container {
+  position: relative;
+  margin: 3px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* Move tooltip styles to container */
+.dot-container::after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+.dot-container:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.past {
+  background-color: #EFE9E5; /* Light gray */
+}
+
+.today {
+  background-color: #FD5C63; /* Green */
+  /* Removed width and height overrides to unify size */
+}
+
+.weekend {
+  background-color: #74D2E7; /* Blue */
+}
+
+.holiday {
+  background-color: #F47721; /* Pink */
+}
+
+#loadingContainer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;  /* Center horizontally */
+    display: none;
+    background-color: transparent;  /* Remove background */
+}
+
+#lottieAnimation {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    color: #999999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
